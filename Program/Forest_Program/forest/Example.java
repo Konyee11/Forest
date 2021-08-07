@@ -7,6 +7,18 @@ import java.io.IOException;
 import java.io.File;
 import javax.swing.JFrame;
 
+
+
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.DisplayName;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+
+
+
+
+
 /**
  * 例題プログラム。
  */
@@ -17,6 +29,9 @@ public class Example extends Object {
      * @param arguments
      * @throws IOException
      */
+
+    @Test
+    @DisplayName("練習")
 	public static void main(String[] args) throws IOException {
         FileChooser fileChooser = new FileChooser();
         File aFile = null;
@@ -46,6 +61,9 @@ public class Example extends Object {
 		aWindow.toFront();
 
         aModel.animate();
+
+        assertNotNull(aFile);
+;
 
 		return;
 	}
