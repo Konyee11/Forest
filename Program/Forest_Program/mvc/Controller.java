@@ -8,6 +8,11 @@ import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
 import javax.swing.event.MouseInputAdapter;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.DisplayName;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+
 /**
  * コントローラ。制御まわりを専門に行う。
  */
@@ -58,11 +63,15 @@ public class Controller extends MouseInputAdapter implements MouseWheelListener
 	 * @param aMouseEvent マウスイベント
 	 * 良好（2010年7月25日）
 	 */
+	@Test
+	@DisplayName("暫定")
 	public void mouseClicked(MouseEvent aMouseEvent)
 	{
 		Point aPoint = aMouseEvent.getPoint();
 		aPoint.translate(view.scrollAmount().x, view.scrollAmount().y);
 		System.out.println(aPoint);
+
+		assertNotNull(aPoint);
 		return;
 	}
 
@@ -74,6 +83,8 @@ public class Controller extends MouseInputAdapter implements MouseWheelListener
 	 * @param aMouseEvent マウスイベント
 	 * 良好（2010年7月25日）
 	 */
+	@Test
+	@DisplayName("暫定")
 	public void mouseDragged(MouseEvent aMouseEvent)
 	{
 		Cursor aCursor = Cursor.getPredefinedCursor(Cursor.MOVE_CURSOR);
@@ -86,6 +97,8 @@ public class Controller extends MouseInputAdapter implements MouseWheelListener
 		view.scrollBy(point);
 		view.repaint();
 		previous = current;
+
+		assertNotNull(aCursor);
 		return;
 	}
 
@@ -94,6 +107,8 @@ public class Controller extends MouseInputAdapter implements MouseWheelListener
 	 * @param aMouseEvent マウスイベント
 	 * 良好（2010年7月25日）
 	 */
+	@Test
+	@DisplayName("暫定")
 	public void mouseEntered(MouseEvent aMouseEvent)
 	{
 		return;
@@ -104,6 +119,8 @@ public class Controller extends MouseInputAdapter implements MouseWheelListener
 	 * @param aMouseEvent マウスイベント
 	 * 良好（2010年7月25日）
 	 */
+	@Test
+	@DisplayName("暫定")
 	public void mouseExited(MouseEvent aMouseEvent)
 	{
 		return;
@@ -114,6 +131,8 @@ public class Controller extends MouseInputAdapter implements MouseWheelListener
 	 * @param aMouseEvent マウスイベント
 	 * 良好（2010年7月25日）
 	 */
+	@Test
+	@DisplayName("暫定")
 	public void mouseMoved(MouseEvent aMouseEvent)
 	{
 		return;
@@ -125,6 +144,8 @@ public class Controller extends MouseInputAdapter implements MouseWheelListener
 	 * @param aMouseEvent マウスイベント
 	 * 良好（2010年7月25日）
 	 */
+	@Test
+	@DisplayName("暫定")
 	public void mousePressed(MouseEvent aMouseEvent)
 	{
 		Cursor aCursor = Cursor.getPredefinedCursor(Cursor.CROSSHAIR_CURSOR);
@@ -132,6 +153,8 @@ public class Controller extends MouseInputAdapter implements MouseWheelListener
 		aComponent.setCursor(aCursor);
 		current = aMouseEvent.getPoint();
 		previous = current;
+
+		assertNotNull(aCursor);
 		return;
 	}
 
@@ -141,6 +164,8 @@ public class Controller extends MouseInputAdapter implements MouseWheelListener
 	 * @param aMouseEvent マウスイベント
 	 * 良好（2010年7月25日）
 	 */
+	@Test
+	@DisplayName("暫定")
 	public void mouseReleased(MouseEvent aMouseEvent)
 	{
 		Cursor aCursor = Cursor.getDefaultCursor();
@@ -148,6 +173,8 @@ public class Controller extends MouseInputAdapter implements MouseWheelListener
 		aComponent.setCursor(aCursor);
 		current = aMouseEvent.getPoint();
 		previous = current;
+
+		assertNotNull(aCursor);
 		return;
 	}
 
@@ -156,6 +183,8 @@ public class Controller extends MouseInputAdapter implements MouseWheelListener
 	 * @param aMouseWheelEvent マウスホィールイベント
 	 * 良好（2010年7月25日）
 	 */
+	@Test
+	@DisplayName("暫定")
 	public void mouseWheelMoved(MouseWheelEvent aMouseWheelEvent)
 	{
 		return;
@@ -167,9 +196,13 @@ public class Controller extends MouseInputAdapter implements MouseWheelListener
 	 * 良好（2010年7月25日）
 	 * 修正（2015年2月9日）
 	 */
+	@Test
+	@DisplayName("暫定")
 	public void setModel(Model aModel)
 	{
 		model = aModel;
+
+		assertNotNull(model);
 		return;
 	}
 
@@ -180,12 +213,16 @@ public class Controller extends MouseInputAdapter implements MouseWheelListener
 	 * 良好（2010年7月25日）
 	 * 修正（2015年2月9日）
 	 */
+	@Test
+	@DisplayName("暫定")
 	public void setView(View aView)
 	{
 		view = aView;
 		view.addMouseListener(this);
 		view.addMouseMotionListener(this);
 		view.addMouseWheelListener(this);
+
+		assertNotNull(view);
 		return;
 	}
 
@@ -194,6 +231,8 @@ public class Controller extends MouseInputAdapter implements MouseWheelListener
 	 * @return 自分自身を表す文字列
 	 * 良好（2010年7月25日）
 	 */
+	@Test
+	@DisplayName("暫定")
 	public String toString()
 	{
 		StringBuffer aBuffer = new StringBuffer();
@@ -204,6 +243,8 @@ public class Controller extends MouseInputAdapter implements MouseWheelListener
 		aBuffer.append(",view=");
 		aBuffer.append(view);
 		aBuffer.append("]");
+
+		assertNotNull(aBuffer);
 		return aBuffer.toString();
 	}
 }
