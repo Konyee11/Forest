@@ -7,9 +7,15 @@ import java.util.HashMap;
 import java.util.ArrayList;
 import utility.StringUtility;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.DisplayName;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 /**
  * Forestクラス
  */
+
+ 
 public class Forest extends Object {
 
     private ForestModel model;
@@ -33,6 +39,9 @@ public class Forest extends Object {
      * 指定されたテキストファイルの読み込む。
      * @param aFile
      */
+
+    @Test
+    @DisplayName("暫定-5")
     public void readFile(File aFile) throws IOException {
         ArrayList<String> textList = (ArrayList<String>) StringUtility.readTextFromFile(aFile);
         System.out.println(textList.size());
@@ -45,6 +54,8 @@ public class Forest extends Object {
             if ( text.equals("branches:") ) {type = 2;}
             this.setTypeData(type, text);
         }
+
+        assertNotNull(type);
         return;
     }
 

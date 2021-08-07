@@ -9,14 +9,9 @@ import javax.swing.JFrame;
 
 
 
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-
-
-
-
 
 
 /**
@@ -31,7 +26,7 @@ public class Example extends Object {
      */
 
     @Test
-    @DisplayName("練習")
+    @DisplayName("暫定")
 	public static void main(String[] args) throws IOException {
         FileChooser fileChooser = new FileChooser();
         File aFile = null;
