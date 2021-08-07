@@ -12,6 +12,12 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import javax.imageio.ImageIO;
 
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.DisplayName;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+
 /**
  * 画像のユーティリティ。
  */
@@ -24,6 +30,8 @@ public class ImageUtility extends Object
 	 * @param height 高さ(縦)
 	 * @return 画像
 	 */
+	@Test
+	@DisplayName("暫定")
 	public static BufferedImage adjustImage(BufferedImage anImage, int width, int height)
 	{
 		BufferedImage adjustedImage = new BufferedImage(width, height, anImage.getType());
@@ -38,7 +46,12 @@ public class ImageUtility extends Object
 		aGraphics.setRenderingHint(RenderingHints.KEY_FRACTIONALMETRICS, RenderingHints.VALUE_FRACTIONALMETRICS_ON);
 		aGraphics.setRenderingHint(RenderingHints.KEY_STROKE_CONTROL, RenderingHints.VALUE_STROKE_NORMALIZE);
 		aGraphics.drawImage(anImage, 0, 0, width, height, null);
+
+
+		assertNotNull(adjustedImage);
+		assertNotNull(aGraphics);
 		return adjustedImage;
+
 	}
 
 	/**
@@ -46,6 +59,8 @@ public class ImageUtility extends Object
 	 * @param anImage 画像(カラー)
 	 * @return 画像(グレースケール)
 	 */
+	@Test
+	@DisplayName("暫定")
 	public static BufferedImage grayscaleImage(BufferedImage anImage)
 	{
 		int width = anImage.getWidth();
@@ -61,7 +76,12 @@ public class ImageUtility extends Object
 				grayscaleImage.setRGB(x, y, aRGB);
 			}
 		}
+
+		assertNotNull(width);
+		assertNotNull(height);
 		return grayscaleImage;
+
+
 	}
 
 	/**
@@ -69,6 +89,8 @@ public class ImageUtility extends Object
 	 * @param anImage 画像
 	 * @return コピー画像
 	 */
+	@Test
+	@DisplayName("暫定")
 	public static BufferedImage copyImage(BufferedImage anImage)
 	{
 		BufferedImage copiedImage = new BufferedImage(anImage.getWidth(), anImage.getHeight(), anImage.getType());
@@ -76,7 +98,11 @@ public class ImageUtility extends Object
 		aGraphics.setColor(Color.white);
 		aGraphics.fillRect(0, 0, copiedImage.getWidth(), copiedImage.getHeight());
 		aGraphics.drawImage((Image)anImage, 0, 0, null);
+
+		assertNotNull(copiedImage);
+		assertNotNull(aGraphics);
 		return copiedImage;
+
 	}
 
 	/**
@@ -84,6 +110,8 @@ public class ImageUtility extends Object
 	 * @param anImage 画像
 	 * @return 輝度（ルミナンス）の二次元配列
 	 */
+	@Test
+	@DisplayName("暫定")
 	public static double[][] convertImageToLuminanceMatrix(BufferedImage anImage)
 	{
 		int width = anImage.getWidth();
@@ -97,7 +125,14 @@ public class ImageUtility extends Object
 				aMatrix[y][x] = ColorUtility.luminanceFromRGB(aRGB);
 			}
 		}
+
+		assertNotNull(width);
+		assertNotNull(height);
+		assertNotNull(aMatrix);
+
 		return aMatrix;
+
+
 	}
 
 	/**
@@ -105,6 +140,8 @@ public class ImageUtility extends Object
 	 * @param anImage 画像
 	 * @return yの二次元配列とuの二次元配列とvの二次元配列の配列
 	 */
+	@Test
+	@DisplayName("暫定")
 	public static double[][][] convertImageToYUVMatrixes(BufferedImage anImage)
 	{
 		int width = anImage.getWidth();
@@ -123,7 +160,14 @@ public class ImageUtility extends Object
 				vMatrix[y][x] = yuv[2];
 			}
 		}
+
+		assertNotNull(width);
+		assertNotNull(height);
+		assertNotNull(yMatrix);
+		assertNotNull(uMatrix);
+		assertNotNull(vMatrix);
 		return new double[][][] { yMatrix, uMatrix, vMatrix };
+
 	}
 
 	/**
@@ -131,6 +175,8 @@ public class ImageUtility extends Object
 	 * @param aMatrix 輝度（ルミナンス）の二次元配列
 	 * @return 画像
 	 */
+	@Test
+	@DisplayName("暫定")
 	public static BufferedImage convertLuminanceMatrixToImage(double[][] aMatrix)
 	{
 		int width = aMatrix[0].length;
@@ -152,7 +198,12 @@ public class ImageUtility extends Object
 				anImage.setRGB(x, y, aRGB);
 			}
 		}
+
+		assertNotNull(width);
+		assertNotNull(height);
+		assertNotNull(anImage);
 		return anImage;
+
 	}
 
 	/**
@@ -160,6 +211,8 @@ public class ImageUtility extends Object
 	 * @param yuvMatrixes yの二次元配列とuの二次元配列とvの二次元配列の配列
 	 * @return 画像
 	 */
+	@Test
+	@DisplayName("暫定")
 	public static BufferedImage convertYUVMatrixesToImage(double[][][] yuvMatrixes)
 	{
 		double[][] yMatrix = yuvMatrixes[0];
@@ -184,7 +237,14 @@ public class ImageUtility extends Object
 				anImage.setRGB(x, y, aRGB);
 			}
 		}
+
+		assertNotNull(yMatrix);
+		assertNotNull(uMatrix);
+		assertNotNull(vMatrix);
+		assertNotNull(width);
+		assertNotNull(height);
 		return anImage;
+
 	}
 
 	/**
@@ -192,9 +252,13 @@ public class ImageUtility extends Object
 	 * @param aFile ファイル（ファイルの拡張子のフォーマットが重要）
 	 * @return 画像
 	 */
+	@Test
+	@DisplayName("暫定")
 	public static BufferedImage readImage(File aFile)
 	{
+		assertNotNull(aFile);
 		return ImageUtility.readImageFromFile(aFile);
+
 	}
 
 	/**
@@ -202,9 +266,13 @@ public class ImageUtility extends Object
 	 * @param aString ファイル名（ファイル名の拡張子のフォーマットが重要）
 	 * @return 画像
 	 */
+	@Test
+	@DisplayName("暫定")
 	public static BufferedImage readImage(String aString)
 	{
+		assertNotNull(aString);
 		return ImageUtility.readImageFromFile(aString);
+
 	}
 
 	/**
@@ -212,12 +280,16 @@ public class ImageUtility extends Object
 	 * @param aFile ファイル（ファイルの拡張子のフォーマットが重要）
 	 * @return 画像
 	 */
+	@Test
+	@DisplayName("暫定")
 	public static BufferedImage readImageFromFile(File aFile)
 	{
 		BufferedImage anImage = null;
 		try { anImage = ImageIO.read(aFile); }
 		catch (IOException anException) { anException.printStackTrace(); }
+		assertNotNull(anImage);
 		return anImage;
+
 	}
 
 	/**
@@ -225,10 +297,14 @@ public class ImageUtility extends Object
 	 * @param aString ファイル名（ファイル名の拡張子のフォーマットが重要）
 	 * @return 画像
 	 */
+	@Test
+	@DisplayName("暫定")
 	public static BufferedImage readImageFromFile(String aString)
 	{
 		File aFile = new File(aString);
+		assertNotNull(aFile);
 		return ImageUtility.readImageFromFile(aFile);
+
 	}
 
 	/**
@@ -236,12 +312,16 @@ public class ImageUtility extends Object
 	 * @param aURL ユニフォームリソースロケータ（最後の拡張子のフォーマットが重要）
 	 * @return 画像
 	 */
+	@Test
+	@DisplayName("暫定")
 	public static BufferedImage readImageFromURL(URL aURL)
 	{
 		BufferedImage anImage = null;
 		try { anImage = ImageIO.read(aURL); }
 		catch (IOException anException) { anException.printStackTrace(); }
+		assertNotNull(anImage);
 		return anImage;
+
 	}
 
 	/**
@@ -249,12 +329,16 @@ public class ImageUtility extends Object
 	 * @param aString ファイル名（ファイル名の拡張子のフォーマットが重要）
 	 * @return 画像
 	 */
+	@Test
+	@DisplayName("暫定")
 	public static BufferedImage readImageFromURL(String aString)
 	{
 		URL aURL = null;
 		try { aURL = new URL(aString); }
 		catch (MalformedURLException anException) { anException.printStackTrace(); }
+		assertNotNull(aURL);
 		return ImageUtility.readImageFromURL(aURL);
+
 	}
 
 	/**
@@ -262,13 +346,17 @@ public class ImageUtility extends Object
 	 * @param anImage 画像
 	 * @param aFile ファイル（ファイルの拡張子のフォーマットが重要）
 	 */
+	@Test
+	@DisplayName("暫定")
 	public static void writeImage(BufferedImage anImage, File aFile)
 	{
 		String aString = aFile.getName();
 		aString = aString.substring(aString.lastIndexOf(".") + 1);
 		try { ImageIO.write(anImage, aString, aFile); }
 		catch (IOException anException) { anException.printStackTrace(); }
+		assertNotNull(aString);
 		return;
+
 	}
 
 	/**
@@ -276,10 +364,15 @@ public class ImageUtility extends Object
 	 * @param anImage 画像
 	 * @param aString ファイル名（ファイル名の拡張子のフォーマットが重要）
 	 */
+	@Test
+	@DisplayName("暫定")
 	public static void writeImage(BufferedImage anImage, String aString)
 	{
 		File aFile = new File(aString);
 		ImageUtility.writeImage(anImage, aFile);
+
+		assertNotNull(aFile);
 		return;
+
 	}
 }
