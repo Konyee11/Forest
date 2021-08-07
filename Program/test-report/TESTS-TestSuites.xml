@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-  <testsuite errors="1" failures="0" hostname="MacBook-Air-di-nomurashouta.local" id="0" name="JUnit Jupiter" package="" skipped="0" tests="1" time="0.086" timestamp="2021-08-07T18:54:45">
+  <testsuite errors="1" failures="0" hostname="MacBook-Air-di-nomurashouta.local" id="0" name="JUnit Jupiter" package="" skipped="0" tests="1" time="0.073" timestamp="2021-08-07T21:08:46">
     <properties>
       <property name="file.encoding" value="UTF-8" />
 
@@ -100,7 +100,7 @@
 
     </properties>
 
-    <testcase classname="forest.ExampleTest" name="exampleTest(String[])" time="0.019">
+    <testcase classname="forest.ExampleTest" name="exampleTest(String[])" time="0.021">
       <error message="No ParameterResolver registered for parameter [java.lang.String[] arg0] in method [public void forest.ExampleTest.exampleTest(java.lang.String[]) throws java.io.IOException]." type="org.junit.jupiter.api.extension.ParameterResolutionException"><![CDATA[org.junit.jupiter.api.extension.ParameterResolutionException: No ParameterResolver registered for parameter [java.lang.String[] arg0] in method [public void forest.ExampleTest.exampleTest(java.lang.String[]) throws java.io.IOException].
 	at org.junit.jupiter.engine.execution.ExecutableInvoker.resolveParameter(ExecutableInvoker.java:200)
 	at org.junit.jupiter.engine.execution.ExecutableInvoker.resolveParameters(ExecutableInvoker.java:183)
@@ -173,7 +173,7 @@ display-name: JUnit Jupiter
 ]]></system-out>
 
   </testsuite>
-  <testsuite errors="0" failures="0" hostname="MacBook-Air-di-nomurashouta.local" id="1" name="JUnit Vintage" package="" skipped="0" tests="0" time="0.002" timestamp="2021-08-07T18:54:45">
+  <testsuite errors="0" failures="0" hostname="MacBook-Air-di-nomurashouta.local" id="1" name="JUnit Vintage" package="" skipped="0" tests="0" time="0.002" timestamp="2021-08-07T21:08:46">
     <properties>
       <property name="file.encoding" value="UTF-8" />
 
