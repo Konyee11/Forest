@@ -274,7 +274,7 @@ th {
   <li><a href="#StringUtility">FileUtility</a>（文字列ユーティリティ）</li>
 </ul>
 <ul>
-  <li><a href="#mvc.mf">mvc.mf</a>（マニフェストファイル）</li>
+  <li><a href="#Forest_Program.mf">Forest_Program.mf</a>（マニフェストファイル）</li>
   <li><a href="#Makefile">Makefile</a>（メイクファイル）</li>
   <li><a href="#build.xml">build.xml</a>（ビルドファイル）</li>
 </ul>
@@ -821,6 +821,12 @@ public class Controller extends MouseInputAdapter implements MouseWheelListener
 		return aBuffer.toString();
 	}
 }</pre>
+
+
+
+
+
+
 <div class="belt">
 <h3><a name="mvc.mf">mvc.mf</a>（マニフェストファイル）</h3>
 </div>
@@ -994,58 +1000,7 @@ set aResult to do shell script aShellScript
 if not (aResult = &quot;&quot;) then
 	display alert aResult
 end if</pre>
-<div class="belt">
-<h3><a name="Makefile.old">Makefile.old</a>（古いメイクファイル）</h3>
-</div>
-<pre>PACKAGE	= mvc
-ZIPNAME	= MVC
-INSTDIR	= MVC.app/Contents/Resources/Java
-DESTDIR	= Classes
 
-JAVAC	= env LC_ALL=en javac -encoding UTF-8 -deprecation -Xlint:unchecked
-CPATH	= -classpath .
-
-JAVA	= java -Xmx512m -Xss1024k -jar
-
-JAVADOC	= env LC_ALL=en javadoc -charset UTF-8 -encoding UTF-8 -docencoding UTF-8 -private
-JDOCDIR	= JavaDoc
-
-CLASSES	= \
-	$(PACKAGE)/Example.class \
-	$(PACKAGE)/Model.class \
-	$(PACKAGE)/View.class \
-	$(PACKAGE)/Controller.class
-
-all: $(PACKAGE).jar
-
-$(PACKAGE).jar: $(CLASSES)
-	if [ ! -e $(DESTDIR)/$(PACKAGE) ] ; then mkdir -p $(DESTDIR)/$(PACKAGE) ; fi
-	cp -p $(PACKAGE)/*.class $(DESTDIR)/$(PACKAGE)
-	if [ -e $(DESTDIR)/META-INF ] ; then rm -rf $(DESTDIR)/META-INF ; fi
-	(cd $(DESTDIR) ; jar cfm ../$(PACKAGE).jar ../$(PACKAGE).mf . )
-
-%.class: %.java
-	$(JAVAC) $(CPATH) $&lt;
-
-clean:
-	rm -f $(PACKAGE)/*.class $(PACKAGE).jar ../$(ZIPNAME).zip
-	if [ -e $(INSTDIR) ] ; then rm -f -r $(INSTDIR) ; fi
-	rm -rf ${JDOCDIR}
-
-test: all
-	$(JAVA) $(PACKAGE).jar
-
-install: all
-	if [ ! -e $(INSTDIR) ] ; then mkdir $(INSTDIR) ; fi
-	cp -p $(PACKAGE).jar $(INSTDIR)
-	chmod 755 $(INSTDIR)/../../MacOS/applet
-
-doc: all
-	${JAVADOC} -d ${JDOCDIR} $(PACKAGE)/*.java
-
-zip: javadoc clean
-	(cd .. ; zip -r $(ZIPNAME).zip $(ZIPNAME)/)</pre>
-<hr>
 
 
 

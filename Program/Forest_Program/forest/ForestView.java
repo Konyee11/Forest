@@ -9,6 +9,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import mvc.View;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.DisplayName;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+
 /**
  * ForestViewクラス。
  */
@@ -28,6 +33,9 @@ public class ForestView extends View {
     /**
      * 指定されたグラフィックにNodeとBranchを描画
      */
+
+    @Test
+    @DisplayName("暫定-9")
     public void paintComponent(Graphics aGraphics) {
         int width = this.getWidth();
 		int height = this.getHeight();
@@ -65,6 +73,9 @@ public class ForestView extends View {
 
         Point aPoint = this.scrollAmount();
         aGraphics.drawImage(picture, 0-aPoint.x, 0-aPoint.y, this);
+
+
+        assertNotNull(aPoint);
 		return;
 	}
 }

@@ -7,6 +7,10 @@ import java.util.Collections;
 import javax.swing.border.LineBorder;
 import javax.swing.JLabel;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.DisplayName;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 public class Node extends JLabel {
 
 	private int nodeNum;
@@ -37,21 +41,31 @@ public class Node extends JLabel {
      * ノード番号を応答する
      * @return
      */
+
+    @Test
+    @DisplayName("暫定-9")
     public int getNodeNum() {
+        assertNotNull(this.nodeNum);
         return this.nodeNum;
     }
 
     /**
      * ノード名を応答する
      */
+    @Test
+    @DisplayName("暫定-9")
     public String getName() {
+        assertNotNull(this.nodeName);
         return this.nodeName;
     }
 
     /**
      * 親ノードのインスタンスを応答する
      */
+    @Test
+    @DisplayName("暫定-9")
     public Node getParent() {
+        assertNotNull(this.parent);
         return this.parent;
     }
 
@@ -59,7 +73,10 @@ public class Node extends JLabel {
      * 子ノードのインスタンスを応答する
      * @return
      */
+    @Test
+    @DisplayName("暫定-9")
     public ArrayList<Node> getChildren() {
+        assertNotNull(this.children);
         return this.children;
     }
 
@@ -67,8 +84,11 @@ public class Node extends JLabel {
      * 親ノードのインスタンスを設定する。
      * @param aNode
      */
+    @Test
+    @DisplayName("暫定-9")
     public void setParent(Node node) {
         this.parent = node;
+        assertNotNull(this.parent);
         return;
     }
 
@@ -76,9 +96,12 @@ public class Node extends JLabel {
      * 子ノードのインスタンスを設定する。
      * @param aNode
      */
+    @Test
+    @DisplayName("暫定-9")
     public void setChildren(Node aNode) {
         this.children.add(aNode);
         Collections.sort(this.children, new NodeComparator());
+        assertNotNull(this.children);
         return;
     }
 
@@ -86,15 +109,21 @@ public class Node extends JLabel {
      * 探索状態を設定する。
      * @param flag
      */
+    @Test
+    @DisplayName("暫定-9")
     public void setVisit(boolean flag) {
         this.visit = flag;
+        assertNotNull(this.visit);
         return;
     }
 
     /**
      * 探索済みか応答する。
      */
+    @Test
+    @DisplayName("暫定-9")
     public boolean getVisit() {
+        assertNotNull(this.visit);
         return this.visit;
     }
 }
