@@ -7,17 +7,9 @@ import java.io.IOException;
 import java.io.File;
 import javax.swing.JFrame;
 
-
-
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-
-
-
-
-
 
 /**
  * 例題プログラム。
