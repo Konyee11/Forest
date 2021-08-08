@@ -6,9 +6,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.DisplayName;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 
 /**
@@ -44,13 +41,11 @@ public class Model extends Object
 	 * @param aView このモデルの依存物となるビュー
 	 * 良好（2010年7月25日）
 	 */
-	@Test
-	@DisplayName("暫定")
+
 	public void addDependent(View aView)
 	{
 		dependents.add(aView);
 
-		assertNotNull(aView);
 		return;
 	}
 
@@ -59,8 +54,7 @@ public class Model extends Object
 	 * 良好（2010年7月25日）
 	 * 修正（2016年1月9日）：キャストからジェネリクスへ変更
 	 */
-	@Test
-	@DisplayName("暫定")
+
 	public void changed()
 	{
 		Iterator<View> anIterator = dependents.iterator();
@@ -70,7 +64,6 @@ public class Model extends Object
 			aView.update();
 		}
 
-		assertNotNull(anIterator);
 		return;
 	}
 
@@ -78,14 +71,12 @@ public class Model extends Object
 	 * 初期化する。
 	 * 良好（2010年7月25日）
 	 */
-	@Test
-	@DisplayName("暫定")
+
 	private void initialize()
 	{
 		dependents = new ArrayList<View>();
 		picture = null;
 
-		assertNotNull(dependents);
 		return;
 	}
 
@@ -93,8 +84,7 @@ public class Model extends Object
 	 * 何もしない。
 	 * 良好（2010年7月25日）
 	 */
-	@Test
-	@DisplayName("暫定")
+
 	public void perform()
 	{
 		return;
@@ -106,8 +96,7 @@ public class Model extends Object
 	 * 良好（2010年7月25日）
 	 * 修正（2015年2月9日）
 	 */
-	@Test
-	@DisplayName("暫定")
+
 	public BufferedImage picture()
 	{
 		return picture;
@@ -119,13 +108,11 @@ public class Model extends Object
 	 * 良好（2010年7月25日）
 	 * 修正（2015年2月9日）
 	 */
-	@Test
-	@DisplayName("暫定")
+
 	public void picture(BufferedImage anImage)
 	{
 		picture = anImage;
 
-		assertNotNull(picture);
 		return;
 	}
 
@@ -134,8 +121,7 @@ public class Model extends Object
 	 * @return 自分自身を表す文字列
 	 * 良好（2010年7月25日）
 	 */
-	@Test
-	@DisplayName("暫定")
+
 	public String toString()
 	{
 		StringBuffer aBuffer = new StringBuffer();
@@ -145,7 +131,6 @@ public class Model extends Object
 		aBuffer.append(picture);
 		aBuffer.append("]");
 
-		assertNotNull(aBuffer);
 		return aBuffer.toString();
 	}
 }

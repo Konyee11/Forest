@@ -9,9 +9,6 @@ import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.DisplayName;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 /**
  * FileChooserクラス
@@ -40,8 +37,7 @@ public class FileChooser extends JFrame implements ActionListener {
     /**
      * ファイル選択時の処理
      */
-    @Test
-    @DisplayName("暫定-5")
+
     public void actionPerformed(ActionEvent aEvent) {
         JFileChooser filechooser = new JFileChooser();
         int selected = filechooser.showOpenDialog(this);
@@ -57,16 +53,13 @@ public class FileChooser extends JFrame implements ActionListener {
             System.out.println("エラー又は取り消しがありました。");
         }
 
-        assertNotNull(selected);
     }
 
     /**
      * 読み込んだファイルのインスタンスを応答する
      */
-    @Test
-    @DisplayName("暫定-6")
     public File getFile() {
-        assertNotNull(this.aFile);
+
         return this.aFile;
     }
 }

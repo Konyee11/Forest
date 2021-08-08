@@ -8,9 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import mvc.Model;
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.DisplayName;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 
 /**
  * ForestModelクラス
@@ -47,10 +45,9 @@ public class ForestModel extends Model {
      * Forestを応答する
      * @return
      */
-    @Test
-    @DisplayName("暫定-9")
+
     public Forest getForest() {
-        assertNotNull(this.aForest);
+
         return this.aForest;
     }
 
@@ -76,15 +73,13 @@ public class ForestModel extends Model {
      * アニメーション実行
      */
 
-    @Test
-    @DisplayName("暫定-9")
+
     public void animate() {
         ArrayList<Node> roots = this.aForest.getRoot();
         for(Node node : roots) {
             aForest.visit(node, new Point(0, Forest.underLine));
         }
 
-        assertNotNull(roots);
         return;
     }
 }

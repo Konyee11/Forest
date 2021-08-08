@@ -9,9 +9,6 @@ import java.awt.image.BufferedImage;
 import javax.swing.JFrame;
 
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.DisplayName;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 
 /**
@@ -32,8 +29,7 @@ public class Example extends Object
 	 * 良好（2010年7月25日）
 	 * 修正（2015年10月16日）
 	 */
-	@Test
-	@DisplayName("暫定")
+
 	public static void main(String[] arguments)
 	{
 		// スクリーンのサイズを求め、スクリーン全体をキャプチャ（画像に）する。
@@ -113,7 +109,7 @@ public class Example extends Object
 			aModel.changed();
 		}
 
-		assertNotNull(aRobot);
+
 		return;
 	}
 }
