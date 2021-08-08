@@ -12,9 +12,6 @@ import mvc.Model;
 import mvc.View;
 
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.DisplayName;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 /**
  * ユーティリティの例題プログラム。 オブザーバ・デザインパターン(MVC:
@@ -41,8 +38,7 @@ public class Example extends Object {
 	 *
 	 * @param arguments 引数の文字列の配列
 	 */
-	@Test
-	@DisplayName("暫定")
+
 	public static void main(String[] arguments) {
 		String aString = null;
 		StringBuffer aBuffer = null;
@@ -118,8 +114,6 @@ public class Example extends Object {
 		FileUtility.open(aString);
 
 
-		assertNotNull(aString);
-		assertNotNull(aBuffer);
 		return;
 
 	}
@@ -130,8 +124,7 @@ public class Example extends Object {
 	 * @param anImage     描画画像
 	 * @param labelString ラベル文字列
 	 */
-	@Test
-	@DisplayName("暫定")
+
 	private static void open(BufferedImage anImage, String labelString) {
 		Model aModel = new Model();
 		aModel.picture(anImage);
@@ -154,8 +147,6 @@ public class Example extends Object {
 		displayPoint = new Point(displayPoint.x + offsetPoint.x, displayPoint.y + offsetPoint.y);
 
 
-		assertNotNull(aModel);
-		assertNotNull(aView);
 		return;
 
 	}
@@ -165,8 +156,7 @@ public class Example extends Object {
 	 *
 	 * @param anImage 描画画像
 	 */
-	@Test
-	@DisplayName("暫定")
+
 	private static void write(BufferedImage anImage) {
 		File aDirectory = new File("ResultImages");
 		if (aDirectory.exists() == false) {
@@ -183,8 +173,6 @@ public class Example extends Object {
 		ImageUtility.writeImage(anImage,
 				aDirectory.getName().concat(File.separator.concat("Utility".concat(aString.concat(".jpg")))));
 
-		assertNotNull(aDirectory);
-		assertNotNull(aString);
 		return;
 
 

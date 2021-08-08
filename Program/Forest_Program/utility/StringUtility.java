@@ -17,9 +17,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.DisplayName;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 
 /**
@@ -33,8 +30,6 @@ public class StringUtility extends Object
 	 * @param aString 文字列
 	 * @return CSV文字列
 	 */
-	@Test
-	@DisplayName("暫定")
 	public static String csvString(String aString)
 	{
 		StringBuffer aBuffer = new StringBuffer();
@@ -68,9 +63,6 @@ public class StringUtility extends Object
 			theString = aBuffer.toString();
 		}
 
-		assertNotNull(aString);
-		assertNotNull(aBuffer);
-
 		return theString;
 	}
 
@@ -78,8 +70,6 @@ public class StringUtility extends Object
 	 * 入出力する際の文字コードを応答するクラスメソッド。
 	 * @return 文字コード
 	 */
-	@Test
-	@DisplayName("暫定")
 	public static String encodingSymbol()
 	{
 		return "UTF-8";
@@ -90,8 +80,6 @@ public class StringUtility extends Object
 	 * @param aBufferdReader バッファードリーダー
 	 * @return 一文字
 	 */
-	@Test
-	@DisplayName("暫定")
 	public static Character getChar(BufferedReader aBufferdReader)
 	{
 		try
@@ -133,8 +121,6 @@ public class StringUtility extends Object
 		}
 		catch (IOException anException) { anException.printStackTrace(); }
 
-				
-		assertNotNull(aBufferdReader);
 		return null;
 
 	}
@@ -144,8 +130,6 @@ public class StringUtility extends Object
 	 * @param aBufferdReader バッファードリーダー
 	 * @return 文字列の集まり：CSVの一行
 	 */
-	@Test
-	@DisplayName("暫定")
 	public static List<String> getRowCSV(BufferedReader aBufferdReader)
 	{
 		List<String> aCollection = new ArrayList<String>();
@@ -219,9 +203,6 @@ public class StringUtility extends Object
 		}
 		aCollection.add(aBuffer.toString());
 
-		assertNotNull(aCollection);
-		assertNotNull(aBuffer);
-		assertNotNull(aCharacter);
 		return aCollection;
 
 	}
@@ -231,8 +212,6 @@ public class StringUtility extends Object
 	 * @param aBufferedWriter バッファードライター
 	 * @param aCollection 文字列の集まり：CSVの一行
 	 */
-	@Test
-	@DisplayName("暫定")
 	public static void putRowCSV(BufferedWriter aBufferedWriter, List<String> aCollection)
 	{
 		try
@@ -248,7 +227,6 @@ public class StringUtility extends Object
 		catch (IOException anException) { anException.printStackTrace(); }
 
 
-		assertNotNull(aBufferedWriter);
 		return;
 
 	}
@@ -258,8 +236,6 @@ public class StringUtility extends Object
 	 * @param aFile ファイル
 	 * @return レコードリスト
 	 */
-	@Test
-	@DisplayName("暫定")
 	public static List<List<String>> readRowsFromFile(File aFile)
 	{
 		List<List<String>> aCollection = new ArrayList<List<String>>();
@@ -281,7 +257,6 @@ public class StringUtility extends Object
 		catch (UnsupportedEncodingException anException) { anException.printStackTrace(); }
 		catch (IOException anException) { anException.printStackTrace(); }
 
-		assertNotNull(aCollection);
 		return aCollection;
 
 	}
@@ -291,16 +266,12 @@ public class StringUtility extends Object
 	 * @param fileString ファイル名
 	 * @return レコードリスト
 	 */
-	@Test
-	@DisplayName("暫定")
 	public static List<List<String>> readRowsFromFile(String fileString)
 	{
 		File aFile = new File(fileString);
 
 		List<List<String>> aCollection = StringUtility.readRowsFromFile(aFile);
 
-		assertNotNull(aFile);
-		assertNotNull(aCollection);
 		return aCollection;
 
 	}
@@ -310,8 +281,6 @@ public class StringUtility extends Object
 	 * @param aFile ファイル
 	 * @return 行リスト
 	 */
-	@Test
-	@DisplayName("暫定")
 	public static List<String> readTextFromFile(File aFile)
 	{
 		List<String> aCollection = new ArrayList<String>();
@@ -334,7 +303,6 @@ public class StringUtility extends Object
 		catch (UnsupportedEncodingException anException) { anException.printStackTrace(); }
 		catch (IOException anException) { anException.printStackTrace(); }
 
-		assertNotNull(aCollection);
 		return aCollection;
 
 	}
@@ -344,16 +312,12 @@ public class StringUtility extends Object
 	 * @param fileString ファイル名
 	 * @return 行リスト
 	 */
-	@Test
-	@DisplayName("暫定")
 	public static List<String> readTextFromFile(String fileString)
 	{
 		File aFile = new File(fileString);
 
 		List<String> aCollection = StringUtility.readTextFromFile(aFile);
 
-		assertNotNull(aFile);
-		assertNotNull(aCollection);
 		return aCollection;
 
 	}
@@ -363,8 +327,6 @@ public class StringUtility extends Object
 	 * @param urlString テキストのためのURL文字列
 	 * @return 行リスト
 	 */
-	@Test
-	@DisplayName("暫定")
 	public static List<String> readTextFromURL(String urlString)
 	{
 		URL aURL = null;
@@ -373,7 +335,7 @@ public class StringUtility extends Object
 
 		List<String> aCollection = StringUtility.readTextFromURL(aURL);
 
-		assertNotNull(aURL);
+
 		return aCollection;
 
 	}
@@ -383,8 +345,6 @@ public class StringUtility extends Object
 	 * @param aURL テキストのためのURL
 	 * @return 行リスト
 	 */
-	@Test
-	@DisplayName("暫定")
 	public static List<String> readTextFromURL(URL aURL)
 	{
 		List<String> aCollection = new ArrayList<String>();
@@ -406,7 +366,6 @@ public class StringUtility extends Object
 		catch (UnsupportedEncodingException anException) { anException.printStackTrace(); }
 		catch (IOException anException) { anException.printStackTrace(); }
 
-		assertNotNull(aCollection);
 		return aCollection;
 
 	}
@@ -417,8 +376,6 @@ public class StringUtility extends Object
 	 * @param separators 分割文字列
 	 * @return セパレータで分割したトークン列
 	 */
-	@Test
-	@DisplayName("暫定")
 	public static List<String> splitString(String string, String separators)
 	{
 		List<Integer> indexes;
@@ -451,8 +408,7 @@ public class StringUtility extends Object
 				result.add(string.substring(start, end + 1));
 			}
 		}
-
-		assertNotNull(result);
+		
 		return result;
 
 	}
@@ -462,8 +418,6 @@ public class StringUtility extends Object
 	 * @param aCollection レコードリスト
 	 * @param aFile ファイル
 	 */
-	@Test
-	@DisplayName("暫定")
 	public static void writeRows(List<List<String>> aCollection, File aFile)
 	{
 		try
@@ -483,7 +437,6 @@ public class StringUtility extends Object
 		catch (UnsupportedEncodingException anException) { anException.printStackTrace(); }
 		catch (IOException anException) { anException.printStackTrace(); }
 
-		assertNotNull(aCollection);
 		return;
 
 	}
@@ -493,14 +446,11 @@ public class StringUtility extends Object
 	 * @param aCollection レコードリスト
 	 * @param fileString ファイル名
 	 */
-	@Test
-	@DisplayName("暫定")
 	public static void writeRows(List<List<String>> aCollection, String fileString)
 	{
 		File aFile = new File(fileString);
 		StringUtility.writeRows(aCollection, aFile);
 
-		assertNotNull(aFile);
 		return;
 
 	}
@@ -510,8 +460,6 @@ public class StringUtility extends Object
 	 * @param aCollection 行リスト
 	 * @param aFile ファイル
 	 */
-	@Test
-	@DisplayName("暫定")
 	public static void writeText(List<String> aCollection, File aFile)
 	{
 		try
@@ -529,7 +477,6 @@ public class StringUtility extends Object
 		}
 		catch (IOException anException) { anException.printStackTrace(); }
 
-		assertNotNull(aFile);
 		return;
 
 	}
@@ -539,14 +486,11 @@ public class StringUtility extends Object
 	 * @param aCollection 行リスト
 	 * @param fileString ファイル名
 	 */
-	@Test
-	@DisplayName("暫定")
 	public static void writeText(List<String> aCollection, String fileString)
 	{
 		File aFile = new File(fileString);
 		StringUtility.writeText(aCollection, aFile);
 
-		assertNotNull(aFile);
 		return;
 
 	}
