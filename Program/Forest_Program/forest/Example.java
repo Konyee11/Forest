@@ -34,7 +34,7 @@ public class Example extends Object {
         JFrame aWindow = new JFrame("Forest");
         aWindow.getContentPane().add(aView);
         aWindow.setLayout(null);
-        aWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        aWindow.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		int titleBarHeight = aWindow.getInsets().top;
 		aWindow.getContentPane().setBackground(new Color(255,255,255));
 		Point aPoint = new Point(Const.WINDOW_WIDTH, Const.WINDOW_HEIGHT);

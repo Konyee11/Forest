@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
@@ -15,20 +16,26 @@ import javax.swing.JPanel;
 public class FileChooser extends JFrame implements ActionListener {
 
     File aFile;
+    JLabel label;
 
     /**
      * コンストラクタ
      */
     FileChooser() {
         this.aFile = null;
-        JButton aButton = new JButton("ファイル選択");
+        JButton aButton = new JButton("テキストファイル選択");
         aButton.addActionListener(this);
         JPanel aPanel = new JPanel();
         aPanel.add(aButton);
 
+        label = new JLabel();
+        JPanel labelPanel = new JPanel();
+        labelPanel.add(label);
+
         this.setSize(300,200);
-        this.setTitle("ファイル名を選択");
+        this.setTitle("Forest");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.getContentPane().add(labelPanel, BorderLayout.CENTER);
         this.getContentPane().add(aPanel, BorderLayout.PAGE_END);
         this.setVisible(true);
     }
@@ -42,13 +49,13 @@ public class FileChooser extends JFrame implements ActionListener {
 
         if (selected == JFileChooser.APPROVE_OPTION) {
             this.aFile = filechooser.getSelectedFile();
-            System.out.println("ファイルが選択されました = "+this.aFile.getName());
+            this.label.setText("ファイルが選択されました = "+this.aFile.getName());
         }
         else if (selected == JFileChooser.CANCEL_OPTION) {
-            System.out.println("キャンセルされました。");
+            this.label.setText("キャンセルされました。");
         }
         else if (selected == JFileChooser.ERROR_OPTION) {
-            System.out.println("エラー又は取り消しがありました。");
+            this.label.setText("エラー又は取り消しがありました。");
         }
     }
 
