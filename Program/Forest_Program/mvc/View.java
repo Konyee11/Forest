@@ -7,9 +7,6 @@ import javax.swing.JPanel;
 import java.awt.Color;
 
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.DisplayName;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 
 /**
@@ -54,7 +51,6 @@ public class View extends JPanel
 		controller.setView(this);
 		offset = new Point(0, 0);
 
-		assertNotNull(aModel);
 		return;
 	}
 
@@ -76,7 +72,7 @@ public class View extends JPanel
 		controller.setView(this);
 		offset = new Point(0, 0);
 
-		assertNotNull(model);
+
 		return;
 	}
 
@@ -86,8 +82,7 @@ public class View extends JPanel
 	 * @param aGraphics グラフィックス・コンテキスト
 	 * 良好（2010年7月25日）
 	 */
-	@Test
-	@DisplayName("暫定")
+
 	public void paintComponent(Graphics aGraphics)
 	{
 		int width = this.getWidth();
@@ -99,7 +94,6 @@ public class View extends JPanel
 		if (picture == null) { return; }
 		aGraphics.drawImage(picture, offset.x, offset.y, null);
 
-		assertNotNull(aGraphics);
 		return;
 	}
 
@@ -109,15 +103,12 @@ public class View extends JPanel
 	 * 良好（2010年7月25日）
 	 * 修正（2015年2月9日）
 	 */
-	@Test
-	@DisplayName("暫定")
+
 	public Point scrollAmount()
 	{
 		int x = 0 - offset.x;
 		int y = 0 - offset.y;
 
-		assertNotNull(x);
-		assertNotNull(y);
 		return (new Point(x, y));
 	}
 
@@ -127,15 +118,13 @@ public class View extends JPanel
 	 * 良好（2010年7月25日）
 	 * 修正（2015年2月9日）
 	 */
-	@Test
-	@DisplayName("暫定")
+
 	public void scrollBy(Point aPoint)
 	{
 		int x = offset.x + aPoint.x;
 		int y = offset.y + aPoint.y;
 		this.scrollTo(new Point(x, y));
 
-		assertNotNull(aPoint);
 		return;
 	}
 
@@ -145,12 +134,11 @@ public class View extends JPanel
 	 * 良好（2010年7月25日）
 	 * 修正（2015年2月9日）
 	 */
-	@Test
-	@DisplayName("暫定")
+
 	public void scrollTo(Point aPoint)
 	{
 		offset = aPoint;
-		assertNotNull(aPoint);
+
 		return;
 	}
 
@@ -159,8 +147,7 @@ public class View extends JPanel
 	 * @return 自分自身を表す文字列
 	 * 良好（2010年7月25日）
 	 */
-	@Test
-	@DisplayName("暫定")
+
 	public String toString()
 	{
 		StringBuffer aBuffer = new StringBuffer();
@@ -172,7 +159,6 @@ public class View extends JPanel
 		aBuffer.append(offset);
 		aBuffer.append("]");
 
-		assertNotNull(aBuffer);
 		return aBuffer.toString();
 	}
 

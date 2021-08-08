@@ -1,4 +1,4 @@
-gitpackage forest;
+package forest;
 
 import java.util.Comparator;
 
